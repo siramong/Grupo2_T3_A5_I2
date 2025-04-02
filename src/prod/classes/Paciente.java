@@ -15,8 +15,8 @@ public class Paciente {
     String numeroCedula;
     int edad;
     String fechaNacimiento;
-    ArrayList historialMedico = new ArrayList<>();
-    ArrayList alergias = new ArrayList<>();
+    ArrayList<String> historialMedico = new ArrayList<>();
+    ArrayList<String> alergias = new ArrayList<>();
 
     public Paciente(String nombres, String apellidos, String tipoSangre, String numeroCedula, int edad, String fechaNacimiento) {
         this.nombres = nombres;
