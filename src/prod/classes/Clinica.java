@@ -13,6 +13,26 @@ import java.util.ArrayList;
  */
 public class Clinica {
 
-    ArrayList<Paciente> pacientes = new ArrayList<>();
-    ArrayList<Doctor> doctores = new ArrayList<>();
+    public ArrayList<Paciente> pacientes = new ArrayList<>();
+    public ArrayList<Doctor> doctores = new ArrayList<>();
+    private ArrayList<CitaMedica> citas = new ArrayList<>();
+    
+    String nombreClinica;
+    String direccionClinica;
+
+    public Clinica(String nombreClinica, String direccionClinica) {
+        this.nombreClinica = nombreClinica;
+        this.direccionClinica = direccionClinica;
+    }
+
+    public ArrayList<CitaMedica> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<CitaMedica> citas) {
+        this.citas = citas;
+    }
+    
+    
+    
 }

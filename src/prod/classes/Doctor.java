@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package prod.classes;
-
 /**
  *
  * @author PC_12
@@ -25,6 +24,7 @@ public class Doctor {
         this.departamento = departamento;
         this.sueldoHora = sueldoHora;
         this.fechaIngreso = fechaIngreso;
+        
     }
 
     public String getNombres() {
