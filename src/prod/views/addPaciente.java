@@ -62,7 +62,7 @@ public class addPaciente extends javax.swing.JFrame {
             }
         });
 
-        btnCerrar.setText("Cerrar");
+        btnCerrar.setText("Crear");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
