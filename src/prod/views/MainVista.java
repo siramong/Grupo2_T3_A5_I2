@@ -42,7 +42,10 @@ public class MainVista extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItemConratar = new javax.swing.JMenuItem();
+        jMenuItemConsultar = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -100,9 +103,20 @@ public class MainVista extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu5.setText("Doctores");
+
+        jMenuItemConratar.setText("Contratar ");
+        jMenu5.add(jMenuItemConratar);
+
+        jMenuItemConsultar.setText("Consultar");
+        jMenu5.add(jMenuItemConsultar);
+
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Citas Médicas");
+
+        jMenuItem6.setText("Crear");
+        jMenu6.add(jMenuItem6);
+
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Gestion ");
@@ -245,5 +259,8 @@ public class MainVista extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    public javax.swing.JMenuItem jMenuItemConratar;
+    public javax.swing.JMenuItem jMenuItemConsultar;
     // End of variables declaration//GEN-END:variables
 }
