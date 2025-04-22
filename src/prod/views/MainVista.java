@@ -46,12 +46,18 @@ public class MainVista extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        MenuItemVerPacientes = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItemConratar = new javax.swing.JMenuItem();
         jMenuItemConsultar = new javax.swing.JMenuItem();
+        MenuItemVerDoctores = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
+        MenuItemConsultarCita = new javax.swing.JMenuItem();
+        MenuItemVerTodasCitas = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -105,6 +111,9 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem3);
 
+        MenuItemVerPacientes.setText("Ver Pacientes");
+        jMenu1.add(MenuItemVerPacientes);
+
         jMenuBar1.add(jMenu1);
 
         jMenu5.setText("Doctores");
@@ -115,6 +124,9 @@ public class MainVista extends javax.swing.JFrame {
         jMenuItemConsultar.setText("Consultar");
         jMenu5.add(jMenuItemConsultar);
 
+        MenuItemVerDoctores.setText("Ver Doctores");
+        jMenu5.add(MenuItemVerDoctores);
+
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Citas Médicas");
@@ -122,9 +134,22 @@ public class MainVista extends javax.swing.JFrame {
         jMenuItem6.setText("Crear");
         jMenu6.add(jMenuItem6);
 
+        MenuItemConsultarCita.setText("Consultar Cita");
+        jMenu6.add(MenuItemConsultarCita);
+
+        MenuItemVerTodasCitas.setText("Ver Todas las Citas");
+        jMenu6.add(MenuItemVerTodasCitas);
+
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Gestion ");
+
+        jMenuItem8.setText("Crear/Editar Clinica");
+        jMenu7.add(jMenuItem8);
+
+        jMenuItem7.setText("Datos de la Clinica");
+        jMenu7.add(jMenuItem7);
+
         jMenuBar1.add(jMenu7);
 
         jMenu2.setText("Ayuda");
@@ -244,6 +269,10 @@ public class MainVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem MenuItemConsultarCita;
+    public javax.swing.JMenuItem MenuItemVerDoctores;
+    public javax.swing.JMenuItem MenuItemVerPacientes;
+    public javax.swing.JMenuItem MenuItemVerTodasCitas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -265,6 +294,8 @@ public class MainVista extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     public javax.swing.JMenuItem jMenuItemConratar;
     public javax.swing.JMenuItem jMenuItemConsultar;
     // End of variables declaration//GEN-END:variables
