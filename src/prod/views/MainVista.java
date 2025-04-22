@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package prod.views;
+import prod.controllers.MainControlador;
+import prod.models.MainModelo;
 
 /**
  *
@@ -11,11 +13,14 @@ package prod.views;
  */
 public class MainVista extends javax.swing.JFrame {
 
+    MainControlador viewController;
+    MainModelo viewModelo = new MainModelo();
     /**
      * Creates new form MainVista
      */
     public MainVista() {
         initComponents();
+        viewController = new MainControlador(viewModelo,this);
     }
 
     /**
