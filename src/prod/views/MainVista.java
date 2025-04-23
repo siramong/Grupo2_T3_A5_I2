@@ -55,8 +55,8 @@ public class MainVista extends javax.swing.JFrame {
         itmEditClinica = new javax.swing.JMenuItem();
         itmViewClinica = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btnOpenInstructivo = new javax.swing.JMenuItem();
+        btnOpenAcrcaDe = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -133,21 +133,21 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu2.setText("Ayuda");
 
-        jMenuItem1.setText("Instructivo");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btnOpenInstructivo.setText("Instructivo");
+        btnOpenInstructivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btnOpenInstructivoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(btnOpenInstructivo);
 
-        jMenuItem2.setText("Acerca de");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        btnOpenAcrcaDe.setText("Acerca de");
+        btnOpenAcrcaDe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                btnOpenAcrcaDeActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(btnOpenAcrcaDe);
 
         jMenuBar1.add(jMenu2);
 
@@ -192,13 +192,13 @@ public class MainVista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void btnOpenInstructivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenInstructivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_btnOpenInstructivoActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void btnOpenAcrcaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenAcrcaDeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_btnOpenAcrcaDeActionPerformed
 
     private void itmAddPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddPacienteActionPerformed
         // TODO add your handling code here:
@@ -244,6 +244,8 @@ public class MainVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem btnOpenAcrcaDe;
+    public javax.swing.JMenuItem btnOpenInstructivo;
     public javax.swing.JMenuItem itmAddCitaMedica;
     public javax.swing.JMenuItem itmAddPaciente;
     public javax.swing.JMenuItem itmContratar;
@@ -267,7 +269,5 @@ public class MainVista extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

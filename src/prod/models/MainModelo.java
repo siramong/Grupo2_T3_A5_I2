@@ -6,6 +6,7 @@
 package prod.models;
 
 import prod.classes.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,11 +14,7 @@ import prod.classes.*;
  */
 public class MainModelo {
 
-    Clinica ClinicaMain;
-
-    public void createClinic(String nombre, String direccion) {
-        ClinicaMain = new Clinica(nombre, direccion);
-    }
+    Clinica ClinicaMain = new Clinica ("Tu clinica", "Una dirección sumamente real, 123");
 
     public void addDoctor(String nombres, String apellidos, String departamento, double sueldoHora, String fechaIngreso) {
         ClinicaMain.doctores.add(new Doctor(nombres, apellidos, departamento, sueldoHora, fechaIngreso));
@@ -42,7 +39,7 @@ public class MainModelo {
     public CitaMedica getCita(int pos) {
         return ClinicaMain.getCitas().get(pos);
     }
-
+    
     public Clinica getClinicaMain() {
         return ClinicaMain;
     }
