@@ -151,7 +151,42 @@ public class MainControlador implements ActionListener {
                 if (!ev2.getValueIsAdjusting()) {
                     int selectedIndex = viewPacientes.viewPacientes.getSelectedIndex();
                     viewPaciente.setVisible(true);
-                    viewPaciente.LblNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres() + " " + ModeloMain.getPaciente(selectedIndex).getApellidos());
+                    viewPaciente.LblNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
+                    viewPaciente.lblApellidos.setText(ModeloMain.getPaciente(selectedIndex).getApellidos());
+                    viewPaciente.lblCedulaPaciente.setText(ModeloMain.getPaciente(selectedIndex).getNumeroCedula());
+                    viewPaciente.lblEdadPaciente.setText(ModeloMain.getPaciente(selectedIndex).getEdad() + "");
+                    viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
+                    viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
+                }
+            });
+        }
+        
+        // MAIN_DOCTORES_WORKLOAD
+        if (btn == addDoctor.btnCrearDoctor) {
+            ModeloMain.addPaciente(addPaciente.txtNombres.getText(), addPaciente.txtApellidos.getText(), addPaciente.txtTipoSangre.getText(), addPaciente.txtCedula.getText(), Integer.parseInt(addPaciente.txtEdadPaciente.getText()), addPaciente.txtFechaNacimiento.getText());
+            System.out.println(addPaciente.txtNombres.getText() + addPaciente.txtApellidos.getText() + addPaciente.txtTipoSangre.getText() + addPaciente.txtCedula.getText() + addPaciente.txtEdadPaciente.getText() + addPaciente.txtFechaNacimiento.getText());
+            addPaciente.txtNombres.setText("");
+            addPaciente.txtApellidos.setText("");
+            addPaciente.txtTipoSangre.setText("");
+            addPaciente.txtCedula.setText("");
+            addPaciente.txtEdadPaciente.setText("");
+            addPaciente.txtFechaNacimiento.setText("");
+        } else if (btn == VistaMain.itmViewPacientes) {
+            DefaultListModel<String> pacienteListModel = new DefaultListModel<>();
+            for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
+                pacienteListModel.add(i, ModeloMain.getPaciente(i).getNombres() + " " + ModeloMain.getPaciente(i).getApellidos());
+            }
+            viewPacientes.viewPacientes.setModel(pacienteListModel);
+            this.viewPacientes.viewPacientes.addListSelectionListener(ev2 -> {
+                if (!ev2.getValueIsAdjusting()) {
+                    int selectedIndex = viewPacientes.viewPacientes.getSelectedIndex();
+                    viewPaciente.setVisible(true);
+                    viewPaciente.LblNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
+                    viewPaciente.lblApellidos.setText(ModeloMain.getPaciente(selectedIndex).getApellidos());
+                    viewPaciente.lblCedulaPaciente.setText(ModeloMain.getPaciente(selectedIndex).getNumeroCedula());
+                    viewPaciente.lblEdadPaciente.setText(ModeloMain.getPaciente(selectedIndex).getEdad() + "");
+                    viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
+                    viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
                 }
             });
         }

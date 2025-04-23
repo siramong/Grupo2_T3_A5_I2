@@ -34,7 +34,7 @@ public class viewPaciente extends javax.swing.JFrame {
         LblNombrePaciente = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         lblEdadPaciente = new javax.swing.JLabel();
-        lblTipoSangrePaciente = new javax.swing.JLabel();
+        lblFechaNacimiento = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblCedulaPaciente = new javax.swing.JLabel();
@@ -66,7 +66,7 @@ public class viewPaciente extends javax.swing.JFrame {
 
         lblEdadPaciente.setText("jLabel2");
 
-        lblTipoSangrePaciente.setText("jLabel2");
+        lblFechaNacimiento.setText("jLabel2");
 
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Cedula:");
@@ -121,7 +121,7 @@ public class viewPaciente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblTipoSaNGRE)
-                                    .addComponent(lblTipoSangrePaciente)
+                                    .addComponent(lblFechaNacimiento)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lblApellidos)
                                         .addGap(56, 56, 56)
@@ -163,7 +163,7 @@ public class viewPaciente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(lblTipoSangrePaciente))
+                            .addComponent(lblFechaNacimiento))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                         .addComponent(btnCerrar)
                         .addContainerGap())))
@@ -227,7 +227,7 @@ public class viewPaciente extends javax.swing.JFrame {
     public javax.swing.JLabel lblApellidos;
     public javax.swing.JLabel lblCedulaPaciente;
     public javax.swing.JLabel lblEdadPaciente;
+    public javax.swing.JLabel lblFechaNacimiento;
     public javax.swing.JLabel lblTipoSaNGRE;
-    public javax.swing.JLabel lblTipoSangrePaciente;
     // End of variables declaration//GEN-END:variables
 }
