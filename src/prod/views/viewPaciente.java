@@ -37,7 +37,7 @@ public class viewPaciente extends javax.swing.JFrame {
         lblTipoSangrePaciente = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblCedulaPaciente = new javax.swing.JLabel();
         lblTipoSaNGRE = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +72,7 @@ public class viewPaciente extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(204, 0, 0));
         jLabel4.setText("Fecha de Nacimiento:");
 
-        jLabel5.setText("jLabel5");
+        lblCedulaPaciente.setText("jLabel5");
 
         lblTipoSaNGRE.setText("jLabel6");
 
@@ -96,7 +96,7 @@ public class viewPaciente extends javax.swing.JFrame {
                                 .addGap(207, 207, 207)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel5)))
+                                .addComponent(lblCedulaPaciente)))
                         .addGap(0, 81, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -136,7 +136,7 @@ public class viewPaciente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel5)
+                    .addComponent(lblCedulaPaciente)
                     .addComponent(jLabel8)
                     .addComponent(lblTipoSaNGRE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -200,9 +200,9 @@ public class viewPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel lblCedulaPaciente;
     public javax.swing.JLabel lblEdadPaciente;
     public javax.swing.JLabel lblTipoSaNGRE;
     public javax.swing.JLabel lblTipoSangrePaciente;
