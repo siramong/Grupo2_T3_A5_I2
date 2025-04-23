@@ -43,21 +43,17 @@ public class MainVista extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        MenuItemVerPacientes = new javax.swing.JMenuItem();
+        itmAddPaciente = new javax.swing.JMenuItem();
+        itmViewPacientes = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItemConratar = new javax.swing.JMenuItem();
-        jMenuItemConsultar = new javax.swing.JMenuItem();
-        MenuItemVerDoctores = new javax.swing.JMenuItem();
+        itmContratar = new javax.swing.JMenuItem();
+        itmViewDoctores = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        MenuItemConsultarCita = new javax.swing.JMenuItem();
-        MenuItemVerTodasCitas = new javax.swing.JMenuItem();
+        itmAddCitaMedica = new javax.swing.JMenuItem();
+        itmViewCitasMedicas = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        itmEditClinica = new javax.swing.JMenuItem();
+        itmViewClinica = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -87,68 +83,51 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu1.setText("Pacientes");
 
-        jMenuItem4.setText("Datos Personales");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        itmAddPaciente.setText("Registrar Paciente");
+        itmAddPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                itmAddPacienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(itmAddPaciente);
 
-        jMenuItem5.setText("Datos Médicos");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem5);
-
-        jMenuItem3.setText("Historial Medico");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
-
-        MenuItemVerPacientes.setText("Ver Pacientes");
-        jMenu1.add(MenuItemVerPacientes);
+        itmViewPacientes.setText("Ver Pacientes");
+        jMenu1.add(itmViewPacientes);
 
         jMenuBar1.add(jMenu1);
 
         jMenu5.setText("Doctores");
 
-        jMenuItemConratar.setText("Contratar ");
-        jMenu5.add(jMenuItemConratar);
+        itmContratar.setText("Contratar ");
+        jMenu5.add(itmContratar);
 
-        jMenuItemConsultar.setText("Consultar");
-        jMenu5.add(jMenuItemConsultar);
-
-        MenuItemVerDoctores.setText("Ver Doctores");
-        jMenu5.add(MenuItemVerDoctores);
+        itmViewDoctores.setText("Ver Doctores");
+        jMenu5.add(itmViewDoctores);
 
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Citas Médicas");
 
-        jMenuItem6.setText("Crear");
-        jMenu6.add(jMenuItem6);
+        itmAddCitaMedica.setText("Crear");
+        jMenu6.add(itmAddCitaMedica);
 
-        MenuItemConsultarCita.setText("Consultar Cita");
-        jMenu6.add(MenuItemConsultarCita);
-
-        MenuItemVerTodasCitas.setText("Ver Todas las Citas");
-        jMenu6.add(MenuItemVerTodasCitas);
+        itmViewCitasMedicas.setText("Ver Todas las Citas");
+        jMenu6.add(itmViewCitasMedicas);
 
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Gestion ");
 
-        jMenuItem8.setText("Crear/Editar Clinica");
-        jMenu7.add(jMenuItem8);
+        itmEditClinica.setText("Editar Clinica");
+        itmEditClinica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmEditClinicaActionPerformed(evt);
+            }
+        });
+        jMenu7.add(itmEditClinica);
 
-        jMenuItem7.setText("Datos de la Clinica");
-        jMenu7.add(jMenuItem7);
+        itmViewClinica.setText("Datos de la Clinica");
+        jMenu7.add(itmViewClinica);
 
         jMenuBar1.add(jMenu7);
 
@@ -221,17 +200,13 @@ public class MainVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void itmAddPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_itmAddPacienteActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void itmEditClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmEditClinicaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_itmEditClinicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,10 +244,14 @@ public class MainVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenuItem MenuItemConsultarCita;
-    public javax.swing.JMenuItem MenuItemVerDoctores;
-    public javax.swing.JMenuItem MenuItemVerPacientes;
-    public javax.swing.JMenuItem MenuItemVerTodasCitas;
+    public javax.swing.JMenuItem itmAddCitaMedica;
+    public javax.swing.JMenuItem itmAddPaciente;
+    public javax.swing.JMenuItem itmContratar;
+    public javax.swing.JMenuItem itmEditClinica;
+    public javax.swing.JMenuItem itmViewCitasMedicas;
+    public javax.swing.JMenuItem itmViewClinica;
+    public javax.swing.JMenuItem itmViewDoctores;
+    public javax.swing.JMenuItem itmViewPacientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -290,13 +269,5 @@ public class MainVista extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    public javax.swing.JMenuItem jMenuItemConratar;
-    public javax.swing.JMenuItem jMenuItemConsultar;
     // End of variables declaration//GEN-END:variables
 }

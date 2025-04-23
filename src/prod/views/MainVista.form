@@ -35,31 +35,18 @@
             <Property name="text" type="java.lang.String" value="Pacientes"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="itmAddPaciente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Datos Personales"/>
+                <Property name="text" type="java.lang.String" value="Registrar Paciente"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmAddPacienteActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Datos M&#xe9;dicos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Historial Medico"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVerPacientes">
+            <MenuItem class="javax.swing.JMenuItem" name="itmViewPacientes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Pacientes"/>
               </Properties>
@@ -74,7 +61,7 @@
             <Property name="text" type="java.lang.String" value="Doctores"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemConratar">
+            <MenuItem class="javax.swing.JMenuItem" name="itmContratar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Contratar "/>
               </Properties>
@@ -82,15 +69,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemConsultar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVerDoctores">
+            <MenuItem class="javax.swing.JMenuItem" name="itmViewDoctores">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Doctores"/>
               </Properties>
@@ -105,20 +84,15 @@
             <Property name="text" type="java.lang.String" value="Citas M&#xe9;dicas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+            <MenuItem class="javax.swing.JMenuItem" name="itmAddCitaMedica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemConsultarCita">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consultar Cita"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVerTodasCitas">
+            <MenuItem class="javax.swing.JMenuItem" name="itmViewCitasMedicas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver Todas las Citas"/>
               </Properties>
@@ -133,15 +107,24 @@
             <Property name="text" type="java.lang.String" value="Gestion "/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+            <MenuItem class="javax.swing.JMenuItem" name="itmEditClinica">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Crear/Editar Clinica"/>
+                <Property name="text" type="java.lang.String" value="Editar Clinica"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmEditClinicaActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+            <MenuItem class="javax.swing.JMenuItem" name="itmViewClinica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Datos de la Clinica"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </MenuItem>
           </SubComponents>
         </Menu>
