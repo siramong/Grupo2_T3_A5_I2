@@ -31,11 +31,9 @@ public class viewDoctor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         nombreDoctorview = new javax.swing.JLabel();
         departDoctorview1 = new javax.swing.JLabel();
-        horarioDoctorview = new javax.swing.JLabel();
         sueldoDoctorview = new javax.swing.JLabel();
         cerrarVentanaviewDoctor = new javax.swing.JButton();
 
@@ -48,15 +46,11 @@ public class viewDoctor extends javax.swing.JFrame {
 
         jLabel3.setText("Departamento:");
 
-        jLabel4.setText("Horario: ");
-
         jLabel5.setText("Sueldo:");
 
         nombreDoctorview.setText("jLabel6");
 
         departDoctorview1.setText("jLabel6");
-
-        horarioDoctorview.setText("jLabel6");
 
         sueldoDoctorview.setText("jLabel6");
 
@@ -88,11 +82,6 @@ public class viewDoctor extends javax.swing.JFrame {
                         .addComponent(departDoctorview1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(horarioDoctorview))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel5)
                         .addGap(19, 19, 19)
                         .addComponent(sueldoDoctorview)))
@@ -114,11 +103,7 @@ public class viewDoctor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(departDoctorview1)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(horarioDoctorview))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sueldoDoctorview)
                     .addComponent(jLabel5))
@@ -189,11 +174,9 @@ public class viewDoctor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton cerrarVentanaviewDoctor;
     public javax.swing.JLabel departDoctorview1;
-    public javax.swing.JLabel horarioDoctorview;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel nombreDoctorview;

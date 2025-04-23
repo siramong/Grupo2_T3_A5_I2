@@ -30,7 +30,7 @@ public class viewDoctores extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lstViewDoctores = new javax.swing.JList<>();
         cerrarViewDoctores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,12 +38,12 @@ public class viewDoctores extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 204, 204));
         jLabel1.setText("Lista de Doctores");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        lstViewDoctores.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(lstViewDoctores);
 
         cerrarViewDoctores.setText("Cerrar");
         cerrarViewDoctores.addActionListener(new java.awt.event.ActionListener() {
@@ -147,8 +147,8 @@ public class viewDoctores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton cerrarViewDoctores;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JList<String> lstViewDoctores;
     // End of variables declaration//GEN-END:variables
 }
