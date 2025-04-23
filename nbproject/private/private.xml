@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Grupo2_T3_A5_I2/src/prod/views/MainVista.java</file>
-            <file>file:/D:/Grupo2_T3_A5_I2/src/prod/controllers/MainControlador.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/classes/Doctor.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/views/viewDoctores.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/controllers/MainControlador.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/views/viewDoctor.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/views/viewPaciente.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/views/addDoctor.java</file>
+            <file>file:/C:/Users/PC_12/Documents/GitHub/Grupo2_T3_A5_I2/src/prod/models/MainModelo.java</file>
         </group>
     </open-files>
 </project-private>
