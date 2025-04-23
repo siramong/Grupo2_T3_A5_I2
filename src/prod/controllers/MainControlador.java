@@ -15,10 +15,10 @@ import java.awt.event.ActionListener;
  * @author PC_12
  */
 public class MainControlador implements ActionListener {
-    
+
     MainModelo ModeloMain;
     MainVista VistaMain;
-    
+
     addCitaMedica addCitaMedica;
     addClinica addClinica;
     addDoctor addDoctor;
@@ -30,11 +30,11 @@ public class MainControlador implements ActionListener {
     viewDoctores viewDoctores;
     viewPaciente viewPaciente;
     viewPacientes viewPacientes;
-    
+
     public MainControlador(MainModelo ModeloMain, MainVista VistaMain) {
         this.ModeloMain = ModeloMain;
         this.VistaMain = VistaMain;
-        
+
         addCitaMedica = new addCitaMedica();
         addClinica = new addClinica();
         addDoctor = new addDoctor();
@@ -46,7 +46,7 @@ public class MainControlador implements ActionListener {
         viewDoctores = new viewDoctores();
         viewPaciente = new viewPaciente();
         viewPacientes = new viewPacientes();
-        
+
         this.VistaMain.itmAddCitaMedica.addActionListener(this);
         this.VistaMain.itmAddPaciente.addActionListener(this);
         this.VistaMain.itmContratar.addActionListener(this);
@@ -55,8 +55,20 @@ public class MainControlador implements ActionListener {
         this.VistaMain.itmViewClinica.addActionListener(this);
         this.VistaMain.itmViewDoctores.addActionListener(this);
         this.VistaMain.itmViewPacientes.addActionListener(this);
+        this.addCitaMedica.btnCerrar.addActionListener(this);
+        this.addClinica.btnCerrarCrearClinica.addActionListener(this);
+        this.addDoctor.cerraraddDoctor.addActionListener(this);
+        this.addPaciente.cerrarAddPaciente.addActionListener(this);
+        this.viewAdministracion.btnCerrarViewAdministracion.addActionListener(this);
+        this.viewCita.btnCerrarViewCita.addActionListener(this);
+        this.viewCitasMedicas.btnCerrarCitasCreadas.addActionListener(this);
+        this.viewDoctor.cerrarVentanaviewDoctor.addActionListener(this);
+        this.viewDoctores.cerrarViewDoctores.addActionListener(this);
+        this.viewPaciente.btnCerrar.addActionListener(this);
+        this.viewPacientes.cerrarViewPacientes.addActionListener(this);
+
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         Object btn = e.getSource();
@@ -76,7 +88,29 @@ public class MainControlador implements ActionListener {
             this.viewDoctores.setVisible(true);
         } else if (btn == VistaMain.itmViewPacientes) {
             this.viewPacientes.setVisible(true);
+        } else if (btn == addCitaMedica.btnCerrar) {
+            addCitaMedica.setVisible(false);
+        } else if (btn == addClinica.btnCerrarCrearClinica) {
+            addClinica.setVisible(false);
+        } else if (btn == addDoctor.cerraraddDoctor) {
+            addDoctor.setVisible(false);
+        } else if (btn == addPaciente.cerrarAddPaciente) {
+            addPaciente.setVisible(false);
+        } else if (btn == viewAdministracion.btnCerrarViewAdministracion) {
+            viewAdministracion.setVisible(false);
+        } else if (btn == viewCita.btnCerrarViewCita) {
+            viewCita.setVisible(false);
+        } else if (btn == viewCitasMedicas.btnCerrarCitasCreadas) {
+            viewCitasMedicas.setVisible(false);
+        } else if (btn == viewDoctor.cerrarVentanaviewDoctor) {
+            viewDoctor.setVisible(false);
+        } else if (btn == viewDoctores.cerrarViewDoctores) {
+            viewDoctores.setVisible(false);
+        } else if (btn == viewPaciente.btnCerrar) {
+            viewPaciente.setVisible(false);
+        } else if (btn == viewPacientes.cerrarViewPacientes) {
+            viewPacientes.setVisible(false);
         }
     }
-    
+
 }
