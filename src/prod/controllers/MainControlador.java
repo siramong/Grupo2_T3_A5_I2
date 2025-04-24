@@ -232,5 +232,7 @@ public class MainControlador implements ActionListener {
                 viewCita.lblPacienteViewPaciente.setText(ModeloMain.getCita(selectedIndex).getPacienteAtendido().getNombres() + " " + ModeloMain.getCita(selectedIndex).getPacienteAtendido().getApellidos());
             });
         }
+        
+        //MAIN_CLINICA WORKLOAD
     }
 }
