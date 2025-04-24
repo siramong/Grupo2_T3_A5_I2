@@ -204,7 +204,7 @@ public class viewAdministracion extends javax.swing.JFrame {
     public javax.swing.JLabel lblCitasCreadas;
     public javax.swing.JLabel lblDireccionViewAdministracion;
     public javax.swing.JLabel lblDoctoresActivos;
-    private javax.swing.JLabel lblNombreViewAdministracion;
+    public javax.swing.JLabel lblNombreViewAdministracion;
     public javax.swing.JLabel lblPacientesRegistrados;
     // End of variables declaration//GEN-END:variables
 }

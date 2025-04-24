@@ -18,10 +18,10 @@ import prod.classes.*;
  * @author PC_12
  */
 public class MainControlador implements ActionListener {
-
+    
     MainModelo ModeloMain;
     MainVista VistaMain;
-
+    
     addCitaMedica addCitaMedica;
     addClinica addClinica;
     addDoctor addDoctor;
@@ -35,11 +35,13 @@ public class MainControlador implements ActionListener {
     viewPacientes viewPacientes;
     viewInstructivo viewInstructivo;
     viewAcercaDe viewAcercaDe;
+    
+    viewInfoDialog viewInfo;
 
     public MainControlador(MainModelo ModeloMain, MainVista VistaMain) {
         this.ModeloMain = ModeloMain;
         this.VistaMain = VistaMain;
-
+        
         addCitaMedica = new addCitaMedica();
         addClinica = new addClinica();
         addDoctor = new addDoctor();
@@ -53,7 +55,9 @@ public class MainControlador implements ActionListener {
         viewPacientes = new viewPacientes();
         viewInstructivo = new viewInstructivo();
         viewAcercaDe = new viewAcercaDe();
-
+        
+        viewInfo = new viewInfoDialog();
+        
         this.VistaMain.itmAddCitaMedica.addActionListener(this);
         this.VistaMain.itmAddPaciente.addActionListener(this);
         this.VistaMain.itmContratar.addActionListener(this);
@@ -64,7 +68,7 @@ public class MainControlador implements ActionListener {
         this.VistaMain.itmViewPacientes.addActionListener(this);
         this.VistaMain.btnOpenInstructivo.addActionListener(this);
         this.VistaMain.btnOpenAcrcaDe.addActionListener(this);
-
+        
         this.addCitaMedica.btnCerrar.addActionListener(this);
         this.addClinica.btnCerrarCrearClinica.addActionListener(this);
         this.addDoctor.cerraraddDoctor.addActionListener(this);
@@ -78,11 +82,15 @@ public class MainControlador implements ActionListener {
         this.viewPacientes.cerrarViewPacientes.addActionListener(this);
         this.viewInstructivo.brnCerrarviewIstructivo.addActionListener(this);
         this.viewAcercaDe.btnCerrarViewAcercaDe.addActionListener(this);
-
+        
         this.addPaciente.crearPaciente.addActionListener(this);
         this.addDoctor.btnCrearDoctor.addActionListener(this);
+        
+        this.addClinica.btnGuardarClinica.addActionListener(this);
+        
+        this.viewInfo.btnOk.addActionListener(this);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         Object btn = e.getSource();
@@ -133,6 +141,8 @@ public class MainControlador implements ActionListener {
             viewInstructivo.setVisible(false);
         } else if (btn == viewAcercaDe.btnCerrarViewAcercaDe) {
             viewAcercaDe.setVisible(false);
+        } else if (btn == viewInfo.btnOk) {
+            viewInfo.setVisible(false);
         }
         // MAIN_PACIENTES_WORKLOAD
         if (btn == addPaciente.crearPaciente) {
@@ -144,6 +154,7 @@ public class MainControlador implements ActionListener {
             addPaciente.txtCedula.setText("");
             addPaciente.txtEdadPaciente.setText("");
             addPaciente.txtFechaNacimiento.setText("");
+            showInfoDialog("Paciente Registrado");
         } else if (btn == VistaMain.itmViewPacientes) {
             DefaultListModel<String> pacienteListModel = new DefaultListModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
@@ -170,6 +181,7 @@ public class MainControlador implements ActionListener {
             addDoctor.TxtApellidoDoc.setText("");
             addDoctor.txtDepatamento.setText("");
             addDoctor.txtSueldo.setText("");
+            showInfoDialog("Doctor Contratado");
         } else if (btn == VistaMain.itmViewDoctores) {
             DefaultListModel<String> doctorListModel = new DefaultListModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().doctores.size(); i++) {
@@ -200,29 +212,33 @@ public class MainControlador implements ActionListener {
                     break;
                 }
             }
-
+            
             ModeloMain.createCita(foundDoctor, foundPaciente, Double.parseDouble(addCitaMedica.txtCostoCita.getText()), addCitaMedica.txtFechaCita.getText(), addCitaMedica.txtHoraCita.getText());
+            addCitaMedica.txtCostoCita.setText("");
+            addCitaMedica.txtFechaCita.setText("");
+            addCitaMedica.txtHoraCita.setText("");
+            showInfoDialog("Cita Agendada");
         } else if (btn == VistaMain.itmAddCitaMedica) {
             DefaultComboBoxModel<String> boxDoctores = new DefaultComboBoxModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().doctores.size(); i++) {
                 boxDoctores.addElement(ModeloMain.getDoctor(i).getNombres() + " " + ModeloMain.getDoctor(i).getApellidos());
             }
             addCitaMedica.boxDoctor.setModel(boxDoctores);
-
+            
             DefaultComboBoxModel<String> boxPacientes = new DefaultComboBoxModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
                 boxPacientes.addElement(ModeloMain.getPaciente(i).getNombres() + " " + ModeloMain.getPaciente(i).getApellidos());
             }
             addCitaMedica.boxPaciente.setModel(boxPacientes);
-
+            
         } else if (btn == VistaMain.itmViewCitasMedicas) {
-
+            
             DefaultListModel<String> citasListModel = new DefaultListModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().citas.size(); i++) {
                 citasListModel.add(i, ModeloMain.getCita(i).getDoctorAsignado().getDepartamento() + ": " + ModeloMain.getPaciente(i).getNombres() + " " + ModeloMain.getPaciente(i).getApellidos());
             }
             viewCitasMedicas.listCitasCreadas.setModel(citasListModel);
-
+            
             this.viewCitasMedicas.listCitasCreadas.addListSelectionListener(ev4 -> {
                 int selectedIndex = viewCitasMedicas.listCitasCreadas.getSelectedIndex();
                 viewCita.setVisible(true);
@@ -232,21 +248,26 @@ public class MainControlador implements ActionListener {
                 viewCita.lblPacienteViewPaciente.setText(ModeloMain.getCita(selectedIndex).getPacienteAtendido().getNombres() + " " + ModeloMain.getCita(selectedIndex).getPacienteAtendido().getApellidos());
             });
         }
-        
+
         //MAIN_CLINICA WORKLOAD
-        if(btn == VistaMain.itmEditClinica) {
+        if (btn == VistaMain.itmEditClinica) {
             this.addClinica.txtNombreCrearClinica.setText(ModeloMain.getClinicaMain().nombreClinica);
             this.addClinica.txtDireccionCrearClinica.setText(ModeloMain.getClinicaMain().direccionClinica);
-        } else if(btn == addClinica.btnCrearClinica){
-            //WAIT FOR BTN_CREAR
-            ModeloMain.nombreClinica = addClinica.txtNombreCrearClinica.getText();
-            ModeloMain.nombreClinica = addClinica.txtDireccionCrearClinica.getText();
-        } else if(btn == VistaMain.itmViewClinica) {
+        } else if (btn == addClinica.btnGuardarClinica) {
+            ModeloMain.getClinicaMain().nombreClinica = addClinica.txtNombreCrearClinica.getText();
+            ModeloMain.getClinicaMain().direccionClinica = addClinica.txtDireccionCrearClinica.getText();
+            showInfoDialog("Datos Guardados");
+        } else if (btn == VistaMain.itmViewClinica) {
             viewAdministracion.lblNombreViewAdministracion.setText(ModeloMain.getClinicaMain().nombreClinica);
             viewAdministracion.lblDireccionViewAdministracion.setText(ModeloMain.getClinicaMain().direccionClinica);
-            viewAdministracion.lblPacientesRegistrados.setText(ModeloMain.getClinicaMain().pacientes.size());
-            viewAdministracion.lblDoctoresActivos.setText(ModeloMain.getClinicaMain().doctores.size());
-            viewAdministracion.lblCitasCreadas.setText(ModeloMain.getClinicaMain().citas.size());
+            viewAdministracion.lblPacientesRegistrados.setText(ModeloMain.getClinicaMain().pacientes.size() + "");
+            viewAdministracion.lblDoctoresActivos.setText(ModeloMain.getClinicaMain().doctores.size() + "");
+            viewAdministracion.lblCitasCreadas.setText(ModeloMain.getClinicaMain().citas.size() + "");
         }
+    }
+
+    public void showInfoDialog(String msg) {
+        viewInfo.setVisible(true);
+        viewInfo.lblMsg.setText(msg);
     }
 }

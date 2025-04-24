@@ -68,6 +68,7 @@ public class MainVista extends javax.swing.JFrame {
         jLabel4.setText("Insumo 2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gestión de Clinica");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -76,6 +77,7 @@ public class MainVista extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Insumo 2");
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Imgs/logouets.png"))); // NOI18N
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,7 +85,8 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu1.setText("Pacientes");
 
-        itmAddPaciente.setText("Registrar Paciente");
+        itmAddPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/user-add.png"))); // NOI18N
+        itmAddPaciente.setText("Registrar");
         itmAddPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itmAddPacienteActionPerformed(evt);
@@ -91,6 +94,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu1.add(itmAddPaciente);
 
+        itmViewPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewPacientes.setText("Ver Pacientes");
         jMenu1.add(itmViewPacientes);
 
@@ -98,9 +102,11 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu5.setText("Doctores");
 
+        itmContratar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/contract.png"))); // NOI18N
         itmContratar.setText("Contratar ");
         jMenu5.add(itmContratar);
 
+        itmViewDoctores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewDoctores.setText("Ver Doctores");
         jMenu5.add(itmViewDoctores);
 
@@ -108,16 +114,19 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu6.setText("Citas Médicas");
 
-        itmAddCitaMedica.setText("Crear");
+        itmAddCitaMedica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/reservar-mas.png"))); // NOI18N
+        itmAddCitaMedica.setText("Agendar");
         jMenu6.add(itmAddCitaMedica);
 
-        itmViewCitasMedicas.setText("Ver Todas las Citas");
+        itmViewCitasMedicas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
+        itmViewCitasMedicas.setText("Ver Citas");
         jMenu6.add(itmViewCitasMedicas);
 
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Gestion ");
 
+        itmEditClinica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
         itmEditClinica.setText("Editar Clinica");
         itmEditClinica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +135,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu7.add(itmEditClinica);
 
+        itmViewClinica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/hospital.png"))); // NOI18N
         itmViewClinica.setText("Datos de la Clinica");
         jMenu7.add(itmViewClinica);
 
@@ -133,6 +143,7 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu2.setText("Ayuda");
 
+        btnOpenInstructivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/ayuda.png"))); // NOI18N
         btnOpenInstructivo.setText("Instructivo");
         btnOpenInstructivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +152,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu2.add(btnOpenInstructivo);
 
+        btnOpenAcrcaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/informacion.png"))); // NOI18N
         btnOpenAcrcaDe.setText("Acerca de");
         btnOpenAcrcaDe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,22 +170,20 @@ public class MainVista extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(183, 183, 183)
-                                    .addComponent(jLabel2))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(69, 69, 69)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 79, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(183, 183, 183)
+                            .addComponent(jLabel2))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(69, 69, 69)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(89, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

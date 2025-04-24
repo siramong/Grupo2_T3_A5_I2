@@ -17,8 +17,8 @@ public class Clinica {
     public ArrayList<Doctor> doctores = new ArrayList<>();
     public ArrayList<CitaMedica> citas = new ArrayList<>();
     
-    String nombreClinica;
-    String direccionClinica;
+    public String nombreClinica;
+    public String direccionClinica;
 
     public Clinica(String nombreClinica, String direccionClinica) {
         this.nombreClinica = nombreClinica;

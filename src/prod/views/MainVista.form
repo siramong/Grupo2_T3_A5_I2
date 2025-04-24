@@ -37,7 +37,10 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itmAddPaciente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registrar Paciente"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/user-add.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Registrar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmAddPacienteActionPerformed"/>
@@ -48,6 +51,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmViewPacientes">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/list.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Pacientes"/>
               </Properties>
               <AuxValues>
@@ -63,6 +69,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itmContratar">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/contract.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Contratar "/>
               </Properties>
               <AuxValues>
@@ -71,6 +80,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmViewDoctores">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/list.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Doctores"/>
               </Properties>
               <AuxValues>
@@ -86,7 +98,10 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itmAddCitaMedica">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Crear"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/reservar-mas.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Agendar"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -94,7 +109,10 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmViewCitasMedicas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Todas las Citas"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/list.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ver Citas"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -109,6 +127,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itmEditClinica">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/pencil.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Editar Clinica"/>
               </Properties>
               <Events>
@@ -120,6 +141,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmViewClinica">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/hospital.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Datos de la Clinica"/>
               </Properties>
               <AuxValues>
@@ -135,6 +159,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="btnOpenInstructivo">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/ayuda.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Instructivo"/>
               </Properties>
               <Events>
@@ -146,6 +173,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="btnOpenAcrcaDe">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/prod/assets/Icons/informacion.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Acerca de"/>
               </Properties>
               <Events>
@@ -162,6 +192,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Gesti&#xf3;n de Clinica"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -184,29 +215,25 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                      <Component id="jLabel5" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="318" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" min="-2" pref="318" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="318" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" pref="318" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="89" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jLabel5" min="-2" pref="187" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -244,6 +271,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/prod/assets/Imgs/logouets.png"/>
         </Property>

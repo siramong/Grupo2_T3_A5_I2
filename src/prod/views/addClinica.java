@@ -34,11 +34,12 @@ public class addClinica extends javax.swing.JFrame {
         txtNombreCrearClinica = new javax.swing.JTextField();
         txtDireccionCrearClinica = new javax.swing.JTextField();
         btnCerrarCrearClinica = new javax.swing.JButton();
+        btnGuardarClinica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblCrearClinica.setForeground(new java.awt.Color(51, 204, 0));
-        lblCrearClinica.setText("Crear Clinica");
+        lblCrearClinica.setText("Editar Clinica");
 
         jLabel2.setText("Nombre de la Clinica: ");
 
@@ -69,7 +70,7 @@ public class addClinica extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtDireccionCrearClinica, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,6 +89,13 @@ public class addClinica extends javax.swing.JFrame {
 
         btnCerrarCrearClinica.setText("Cerrar");
 
+        btnGuardarClinica.setText("Guardar");
+        btnGuardarClinica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarClinicaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,8 +104,10 @@ public class addClinica extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCerrarCrearClinica)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCerrarCrearClinica)
+                    .addComponent(btnGuardarClinica))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,6 +116,8 @@ public class addClinica extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnGuardarClinica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCerrarCrearClinica))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -117,6 +129,10 @@ public class addClinica extends javax.swing.JFrame {
     private void txtNombreCrearClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCrearClinicaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreCrearClinicaActionPerformed
+
+    private void btnGuardarClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClinicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarClinicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +171,7 @@ public class addClinica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCerrarCrearClinica;
+    public javax.swing.JButton btnGuardarClinica;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
