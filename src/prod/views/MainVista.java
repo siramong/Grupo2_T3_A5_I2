@@ -54,6 +54,7 @@ public class MainVista extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         itmEditClinica = new javax.swing.JMenuItem();
         itmViewClinica = new javax.swing.JMenuItem();
+        itmPagos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         btnOpenInstructivo = new javax.swing.JMenuItem();
         btnOpenAcrcaDe = new javax.swing.JMenuItem();
@@ -85,6 +86,7 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu1.setText("Pacientes");
 
+        itmAddPaciente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
         itmAddPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/user-add.png"))); // NOI18N
         itmAddPaciente.setText("Registrar");
         itmAddPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +96,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu1.add(itmAddPaciente);
 
+        itmViewPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         itmViewPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewPacientes.setText("Ver Pacientes");
         jMenu1.add(itmViewPacientes);
@@ -102,10 +105,12 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu5.setText("Doctores");
 
+        itmContratar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
         itmContratar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/contract.png"))); // NOI18N
         itmContratar.setText("Contratar ");
         jMenu5.add(itmContratar);
 
+        itmViewDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
         itmViewDoctores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewDoctores.setText("Ver Doctores");
         jMenu5.add(itmViewDoctores);
@@ -114,10 +119,12 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu6.setText("Citas Médicas");
 
+        itmAddCitaMedica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         itmAddCitaMedica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/reservar-mas.png"))); // NOI18N
         itmAddCitaMedica.setText("Agendar");
         jMenu6.add(itmAddCitaMedica);
 
+        itmViewCitasMedicas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         itmViewCitasMedicas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewCitasMedicas.setText("Ver Citas");
         jMenu6.add(itmViewCitasMedicas);
@@ -126,6 +133,7 @@ public class MainVista extends javax.swing.JFrame {
 
         jMenu7.setText("Gestion ");
 
+        itmEditClinica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         itmEditClinica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
         itmEditClinica.setText("Editar Clinica");
         itmEditClinica.addActionListener(new java.awt.event.ActionListener() {
@@ -135,14 +143,21 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu7.add(itmEditClinica);
 
+        itmViewClinica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         itmViewClinica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/hospital.png"))); // NOI18N
         itmViewClinica.setText("Datos de la Clinica");
         jMenu7.add(itmViewClinica);
+
+        itmPagos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
+        itmPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/dinero.png"))); // NOI18N
+        itmPagos.setText("Rol de Pagos");
+        jMenu7.add(itmPagos);
 
         jMenuBar1.add(jMenu7);
 
         jMenu2.setText("Ayuda");
 
+        btnOpenInstructivo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, 0));
         btnOpenInstructivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/ayuda.png"))); // NOI18N
         btnOpenInstructivo.setText("Instructivo");
         btnOpenInstructivo.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +167,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu2.add(btnOpenInstructivo);
 
+        btnOpenAcrcaDe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, 0));
         btnOpenAcrcaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/informacion.png"))); // NOI18N
         btnOpenAcrcaDe.setText("Acerca de");
         btnOpenAcrcaDe.addActionListener(new java.awt.event.ActionListener() {
@@ -260,6 +276,7 @@ public class MainVista extends javax.swing.JFrame {
     public javax.swing.JMenuItem itmAddPaciente;
     public javax.swing.JMenuItem itmContratar;
     public javax.swing.JMenuItem itmEditClinica;
+    public javax.swing.JMenuItem itmPagos;
     public javax.swing.JMenuItem itmViewCitasMedicas;
     public javax.swing.JMenuItem itmViewClinica;
     public javax.swing.JMenuItem itmViewDoctores;
