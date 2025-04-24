@@ -234,5 +234,19 @@ public class MainControlador implements ActionListener {
         }
         
         //MAIN_CLINICA WORKLOAD
+        if(btn == VistaMain.itmEditClinica) {
+            this.addClinica.txtNombreCrearClinica.setText(ModeloMain.getClinicaMain().nombreClinica);
+            this.addClinica.txtDireccionCrearClinica.setText(ModeloMain.getClinicaMain().direccionClinica);
+        } else if(btn == addClinica.btnCrearClinica){
+            //WAIT FOR BTN_CREAR
+            ModeloMain.nombreClinica = addClinica.txtNombreCrearClinica.getText();
+            ModeloMain.nombreClinica = addClinica.txtDireccionCrearClinica.getText();
+        } else if(btn == VistaMain.itmViewClinica) {
+            viewAdministracion.lblNombreViewAdministracion.setText(ModeloMain.getClinicaMain().nombreClinica);
+            viewAdministracion.lblDireccionViewAdministracion.setText(ModeloMain.getClinicaMain().direccionClinica);
+            viewAdministracion.lblPacientesRegistrados.setText(ModeloMain.getClinicaMain().pacientes.size());
+            viewAdministracion.lblDoctoresActivos.setText(ModeloMain.getClinicaMain().doctores.size());
+            viewAdministracion.lblCitasCreadas.setText(ModeloMain.getClinicaMain().citas.size());
+        }
     }
 }
