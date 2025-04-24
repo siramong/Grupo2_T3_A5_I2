@@ -10,6 +10,8 @@ import prod.views.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.DefaultComboBoxModel;
+import prod.classes.*;
 
 /**
  *
@@ -180,6 +182,54 @@ public class MainControlador implements ActionListener {
                 viewDoctor.nombreDoctorview.setText(ModeloMain.getDoctor(selectedIndex).getNombres() + " " + ModeloMain.getDoctor(selectedIndex).getApellidos());
                 viewDoctor.departDoctorview1.setText(ModeloMain.getDoctor(selectedIndex).getDepartamento());
                 viewDoctor.sueldoDoctorview.setText(ModeloMain.getDoctor(selectedIndex).getSueldoHora() + "");
+            });
+        }
+        // MAIN_CITAS_WORKLOAD
+        if (btn == addCitaMedica.btnCrear) {
+            Doctor foundDoctor = null;
+            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
+                if ((d.getNombres() + d.getApellidos()).equals(addCitaMedica.boxDoctor.getSelectedItem().toString())) {
+                    foundDoctor = d;
+                    break;
+                }
+            }
+            Paciente foundPaciente = null;
+            for (Paciente p : ModeloMain.getClinicaMain().pacientes) {
+                if ((p.getNombres() + p.getApellidos()).equals(addCitaMedica.boxPaciente.getSelectedItem().toString())) {
+                    foundPaciente = p;
+                    break;
+                }
+            }
+
+            ModeloMain.createCita(foundDoctor, foundPaciente, Double.parseDouble(addCitaMedica.txtCostoCita.getText()), addCitaMedica.txtFechaCita.getText(), addCitaMedica.txtHoraCita.getText());
+        } else if (btn == VistaMain.itmAddCitaMedica) {
+            DefaultComboBoxModel<String> boxDoctores = new DefaultComboBoxModel<>();
+            for (int i = 0; i < ModeloMain.getClinicaMain().doctores.size(); i++) {
+                boxDoctores.addElement(ModeloMain.getDoctor(i).getNombres() + " " + ModeloMain.getDoctor(i).getApellidos());
+            }
+            addCitaMedica.boxDoctor.setModel(boxDoctores);
+
+            DefaultComboBoxModel<String> boxPacientes = new DefaultComboBoxModel<>();
+            for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
+                boxPacientes.addElement(ModeloMain.getPaciente(i).getNombres() + " " + ModeloMain.getPaciente(i).getApellidos());
+            }
+            addCitaMedica.boxPaciente.setModel(boxPacientes);
+
+        } else if (btn == VistaMain.itmViewCitasMedicas) {
+
+            DefaultListModel<String> citasListModel = new DefaultListModel<>();
+            for (int i = 0; i < ModeloMain.getClinicaMain().citas.size(); i++) {
+                citasListModel.add(i, ModeloMain.getCita(i).getDoctorAsignado().getDepartamento() + ": " + ModeloMain.getPaciente(i).getNombres() + " " + ModeloMain.getPaciente(i).getApellidos());
+            }
+            viewCitasMedicas.listCitasCreadas.setModel(citasListModel);
+
+            this.viewCitasMedicas.listCitasCreadas.addListSelectionListener(ev4 -> {
+                int selectedIndex = viewCitasMedicas.listCitasCreadas.getSelectedIndex();
+                viewCita.setVisible(true);
+                viewCita.lblFechaViewCita.setText(ModeloMain.getCita(selectedIndex).getFecha() + " " + ModeloMain.getCita(selectedIndex).getHora());
+                viewCita.lblCostoViewCita.setText(ModeloMain.getCita(selectedIndex).getCostoCita() + "");
+                viewCita.lblDoctorViewCita.setText(ModeloMain.getCita(selectedIndex).getDoctorAsignado().getNombres() + " " + ModeloMain.getCita(selectedIndex).getDoctorAsignado().getApellidos());
+                viewCita.lblPacienteViewPaciente.setText(ModeloMain.getCita(selectedIndex).getPacienteAtendido().getNombres() + " " + ModeloMain.getCita(selectedIndex).getPacienteAtendido().getApellidos());
             });
         }
     }
