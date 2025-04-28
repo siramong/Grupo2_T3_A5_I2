@@ -36,6 +36,7 @@ public class viewDoctor extends javax.swing.JFrame {
         departDoctorview1 = new javax.swing.JLabel();
         sueldoDoctorview = new javax.swing.JLabel();
         cerrarVentanaviewDoctor = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +62,8 @@ public class viewDoctor extends javax.swing.JFrame {
             }
         });
 
+        btnEditar.setText("Editar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -79,16 +82,20 @@ public class viewDoctor extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel3)
                         .addGap(10, 10, 10)
-                        .addComponent(departDoctorview1))
+                        .addComponent(departDoctorview1)))
+                .addContainerGap(217, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sueldoDoctorview)))
-                .addContainerGap(217, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(cerrarVentanaviewDoctor)
+                        .addComponent(sueldoDoctorview)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEditar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(cerrarVentanaviewDoctor)))
                 .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
@@ -103,11 +110,12 @@ public class viewDoctor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(departDoctorview1)
                     .addComponent(jLabel3))
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sueldoDoctorview)
-                    .addComponent(jLabel5))
-                .addGap(26, 26, 26)
+                    .addComponent(jLabel5)
+                    .addComponent(btnEditar))
+                .addGap(22, 22, 22)
                 .addComponent(cerrarVentanaviewDoctor)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -172,6 +180,7 @@ public class viewDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnEditar;
     public javax.swing.JButton cerrarVentanaviewDoctor;
     public javax.swing.JLabel departDoctorview1;
     private javax.swing.JLabel jLabel1;
