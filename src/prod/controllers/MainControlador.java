@@ -93,7 +93,7 @@ public class MainControlador implements ActionListener {
         this.addClinica.btnGuardarClinica.addActionListener(this);
 
         this.viewPagos.btnCalcular.addActionListener(this);
-        this.viewPagos.btnCalcular.addActionListener(this);
+        this.viewPagos.btnSeleccionar.addActionListener(this);
 
         this.viewInfo.btnOk.addActionListener(this);
 
@@ -231,6 +231,7 @@ public class MainControlador implements ActionListener {
             addCitaMedica.txtCostoCita.setText("");
             addCitaMedica.txtFechaCita.setText("");
             addCitaMedica.txtHoraCita.setText("");
+            foundDoctor.addNumCitas();
             showInfoDialog("Cita Agendada");
         } else if (btn == VistaMain.itmAddCitaMedica) {
             DefaultComboBoxModel<String> boxDoctores = new DefaultComboBoxModel<>();
@@ -286,8 +287,26 @@ public class MainControlador implements ActionListener {
                 boxDoctores.addElement(ModeloMain.getDoctor(i).getNombres() + " " + ModeloMain.getDoctor(i).getApellidos());
             }
             viewPagos.boxDoctor.setModel(boxDoctores);
+        } else if (btn == viewPagos.btnSeleccionar) {
+            Doctor foundDoctor = null;
+            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
+                if ((d.getNombres() + " " + d.getApellidos()).equals(viewPagos.boxDoctor.getSelectedItem().toString())) {
+                    foundDoctor = d;
+                    break;
+                }
+            }
+            viewPagos.lblNumCitas.setText(foundDoctor.getNumCitas() + "");
+            viewPagos.lblSueldo.setText(foundDoctor.getSueldoHora() + "");
+            viewPagos.lblPagoCitas.setText(foundDoctor.getBonoCitas() + "");
         } else if (btn == viewPagos.btnCalcular) {
-
+            Doctor foundDoctor = null;
+            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
+                if ((d.getNombres() + " " + d.getApellidos()).equals(viewPagos.boxDoctor.getSelectedItem().toString())) {
+                    foundDoctor = d;
+                    break;
+                }
+            }
+            viewPagos.lblPago.setText(foundDoctor.calcularPago() + "");
         }
     }
 

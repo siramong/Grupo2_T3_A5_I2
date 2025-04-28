@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package prod.classes;
+
 /**
  *
  * @author PC_12
@@ -15,6 +16,7 @@ public class Doctor {
     String departamento;
     double sueldoHora;
     double horasRegistradas;
+    int numCitas;
     double bonoCitas;
     String fechaIngreso;
 
@@ -24,7 +26,8 @@ public class Doctor {
         this.departamento = departamento;
         this.sueldoHora = sueldoHora;
         this.fechaIngreso = fechaIngreso;
-        
+        this.numCitas = 0;
+        this.bonoCitas = this.sueldoHora * 0.05;
     }
 
     public String getNombres() {
@@ -67,6 +70,18 @@ public class Doctor {
         this.horasRegistradas = horasRegistradas;
     }
 
+    public int getNumCitas() {
+        return numCitas;
+    }
+
+    public void setNumCitas(int numCitas) {
+        this.numCitas = numCitas;
+    }
+
+    public void addNumCitas() {
+        this.numCitas++;
+    }
+
     public double getBonoCitas() {
         return bonoCitas;
     }
@@ -83,4 +98,7 @@ public class Doctor {
         this.fechaIngreso = fechaIngreso;
     }
 
+    public double calcularPago() {
+        return this.sueldoHora + (this.numCitas * this.bonoCitas);
+    }
 }
