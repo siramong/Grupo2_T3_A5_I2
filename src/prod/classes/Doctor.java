@@ -101,4 +101,8 @@ public class Doctor {
     public double calcularPago() {
         return this.sueldoHora + (this.numCitas * this.bonoCitas);
     }
+    
+    public String getNombreCompleto() {
+        return this.nombres + " " + this.apellidos;
+    }
 }

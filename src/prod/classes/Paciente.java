@@ -91,4 +91,7 @@ public class Paciente {
         this.alergias = alergias;
     }
 
+    public String getNombreCompleto() {
+        return this.nombres + " " + this.apellidos;
+    }
 }
