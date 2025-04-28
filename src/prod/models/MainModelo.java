@@ -13,7 +13,7 @@ import prod.classes.*;
  */
 public class MainModelo {
 
-    Clinica ClinicaMain = new Clinica ("Tu clinica", "Una dirección sumamente real, 123");
+    Clinica ClinicaMain = new Clinica("Tu clinica", "Una dirección sumamente real, 123");
 
     public void addDoctor(String nombres, String apellidos, String departamento, double sueldoHora, String fechaIngreso) {
         ClinicaMain.doctores.add(new Doctor(nombres, apellidos, departamento, sueldoHora, fechaIngreso));
@@ -38,10 +38,31 @@ public class MainModelo {
     public CitaMedica getCita(int pos) {
         return ClinicaMain.citas.get(pos);
     }
-    
+
     public Clinica getClinicaMain() {
         return ClinicaMain;
     }
-    
-    
+
+    public Doctor searchDoctor(String query) {
+        Doctor foundDoctor = null;
+        for (Doctor d : this.getClinicaMain().doctores) {
+            if ((d.getNombres() + " " + d.getApellidos()).equals(query)) {
+                foundDoctor = d;
+                break;
+            }
+        }
+        return foundDoctor;
+    }
+
+    public Paciente searchPaciente(String query) {
+        Paciente foundPaciente = null;
+        for (Paciente p : this.getClinicaMain().pacientes) {
+
+            if ((p.getNombres() + " " + p.getApellidos()).equals(query)) {
+                foundPaciente = p;
+                break;
+            }
+        }
+        return foundPaciente;
+    }
 }

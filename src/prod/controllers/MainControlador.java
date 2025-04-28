@@ -211,21 +211,8 @@ public class MainControlador implements ActionListener {
         }
         // MAIN_CITAS_WORKLOAD
         if (btn == addCitaMedica.btnCrear) {
-            Doctor foundDoctor = null;
-            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
-                if ((d.getNombres() + " " + d.getApellidos()).equals(addCitaMedica.boxDoctor.getSelectedItem().toString())) {
-                    foundDoctor = d;
-                    break;
-                }
-            }
-            Paciente foundPaciente = null;
-            for (Paciente p : ModeloMain.getClinicaMain().pacientes) {
-
-                if ((p.getNombres() + " " + p.getApellidos()).equals(addCitaMedica.boxPaciente.getSelectedItem().toString())) {
-                    foundPaciente = p;
-                    break;
-                }
-            }
+            Doctor foundDoctor = ModeloMain.searchDoctor(addCitaMedica.boxDoctor.getSelectedItem().toString());
+            Paciente foundPaciente = ModeloMain.searchPaciente(addCitaMedica.boxPaciente.getSelectedItem().toString());
 
             ModeloMain.createCita(foundDoctor, foundPaciente, Double.parseDouble(addCitaMedica.txtCostoCita.getText()), addCitaMedica.txtFechaCita.getText(), addCitaMedica.txtHoraCita.getText());
             addCitaMedica.txtCostoCita.setText("");
@@ -288,24 +275,12 @@ public class MainControlador implements ActionListener {
             }
             viewPagos.boxDoctor.setModel(boxDoctores);
         } else if (btn == viewPagos.btnSeleccionar) {
-            Doctor foundDoctor = null;
-            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
-                if ((d.getNombres() + " " + d.getApellidos()).equals(viewPagos.boxDoctor.getSelectedItem().toString())) {
-                    foundDoctor = d;
-                    break;
-                }
-            }
+            Doctor foundDoctor = ModeloMain.searchDoctor(viewPagos.boxDoctor.getSelectedItem().toString());
             viewPagos.lblNumCitas.setText(foundDoctor.getNumCitas() + "");
             viewPagos.lblSueldo.setText(foundDoctor.getSueldoHora() + "");
             viewPagos.lblPagoCitas.setText(foundDoctor.getBonoCitas() + "");
         } else if (btn == viewPagos.btnCalcular) {
-            Doctor foundDoctor = null;
-            for (Doctor d : ModeloMain.getClinicaMain().doctores) {
-                if ((d.getNombres() + " " + d.getApellidos()).equals(viewPagos.boxDoctor.getSelectedItem().toString())) {
-                    foundDoctor = d;
-                    break;
-                }
-            }
+            Doctor foundDoctor = ModeloMain.searchDoctor(viewPagos.boxDoctor.getSelectedItem().toString());
             viewPagos.lblPago.setText(foundDoctor.calcularPago() + "");
         }
     }
