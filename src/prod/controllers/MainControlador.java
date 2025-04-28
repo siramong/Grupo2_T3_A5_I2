@@ -266,7 +266,7 @@ public class MainControlador implements ActionListener {
             viewAdministracion.lblCitasCreadas.setText(ModeloMain.getClinicaMain().citas.size() + "");
         }
 
-        //PAGOS WORKLOAD
+        //MAIN_PAGOS WORKLOAD
         if (btn == VistaMain.itmPagos) {
             DefaultComboBoxModel<String> boxDoctores = new DefaultComboBoxModel<>();
             for (int i = 0; i < ModeloMain.getClinicaMain().doctores.size(); i++) {
