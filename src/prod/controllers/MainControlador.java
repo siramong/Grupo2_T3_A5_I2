@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.DefaultComboBoxModel;
 import prod.classes.*;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -212,13 +213,13 @@ public class MainControlador implements ActionListener {
                 pacienteListModel.add(i, ModeloMain.getPaciente(i).getNombreCompleto());
             }
             viewEditPacientes.viewPacientes.setModel(pacienteListModel);
+            ListSelectionListener[] listeners = viewEditPacientes.viewPacientes.getListSelectionListeners();
+            for (ListSelectionListener l : listeners) {
+                viewEditPacientes.viewPacientes.removeListSelectionListener(l);
+            }
             this.viewEditPacientes.viewPacientes.addListSelectionListener(ev2 -> {
                 int selectedIndex = viewEditPacientes.viewPacientes.getSelectedIndex();
                 editPaciente.setVisible(true);
-                viewEditPacientes.setVisible(false);
-                DefaultListModel<String> defaultListModel2 = new DefaultListModel<>();
-                viewEditPacientes.viewPacientes.setModel(defaultListModel2);
-                viewEditPacientes.setVisible(false);
                 editPaciente.txtEditarNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
                 editPaciente.txtEditarApellidoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getApellidos());
                 editPaciente.txtEditarCedulaPaciente.setText(ModeloMain.getPaciente(selectedIndex).getNumeroCedula());
@@ -226,6 +227,7 @@ public class MainControlador implements ActionListener {
                 editPaciente.txtEditarTipoSangrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
                 editPaciente.txtEditarFechaNacimientoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
                 editPaciente.lblNumPaciente.setText(selectedIndex + "");
+                viewEditPacientes.viewPacientes.clearSelection();
             });
         }
         if (btn == editPaciente.btnEditarEditarPaciente) {
@@ -236,6 +238,7 @@ public class MainControlador implements ActionListener {
             editingPaciente.setEdad(Integer.parseInt(editPaciente.txtEditarEdadPaciente.getText()));
             editingPaciente.setTipoSangre(editPaciente.txtEditarTipoSangrePaciente.getText());
             editingPaciente.setFechaNacimiento(editPaciente.txtEditarFechaNacimientoPaciente.getText());
+            editPaciente.setVisible(false);
         }
 
         // MAIN_DOCTORES_WORKLOAD

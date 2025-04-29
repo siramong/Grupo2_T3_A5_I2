@@ -26,7 +26,7 @@ public class MainModelo {
     public void createCita(Doctor doctorAsignado, Paciente pacienteAtendido, double costoCita, String fecha, String hora) {
         ClinicaMain.citas.add(new CitaMedica(doctorAsignado, pacienteAtendido, costoCita, fecha, hora));
     }
-
+    
     public Doctor getDoctor(int pos) {
         if (pos >= 0) {
             return ClinicaMain.doctores.get(pos);

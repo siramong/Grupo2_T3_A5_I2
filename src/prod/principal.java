@@ -18,6 +18,8 @@ public class principal {
     public static void main(String[] args) {
         MainVista vistaProd = new MainVista();
         vistaProd.setVisible(true);
+        
     }
+   
     
 }

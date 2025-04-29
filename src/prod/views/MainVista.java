@@ -21,6 +21,7 @@ public class MainVista extends javax.swing.JFrame {
     public MainVista() {
         initComponents();
         viewController = new MainControlador(viewModelo,this);
+        
     }
 
     /**
