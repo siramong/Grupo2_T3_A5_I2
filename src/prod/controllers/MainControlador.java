@@ -36,6 +36,10 @@ public class MainControlador implements ActionListener {
     viewInstructivo viewInstructivo;
     viewAcercaDe viewAcercaDe;
     viewPagos viewPagos;
+    editPaciente editPaciente;
+    editDoctor editDoctor;
+    viewEditPacientes viewEditPacientes;
+    viewEditDoctores viewEditDoctores;
 
     viewInfoDialog viewInfo;
 
@@ -57,6 +61,10 @@ public class MainControlador implements ActionListener {
         viewInstructivo = new viewInstructivo();
         viewAcercaDe = new viewAcercaDe();
         viewPagos = new viewPagos();
+        editPaciente = new editPaciente();
+        editDoctor = new editDoctor();
+        viewEditDoctores = new viewEditDoctores();
+        viewEditPacientes = new viewEditPacientes();
 
         viewInfo = new viewInfoDialog();
 
@@ -71,6 +79,8 @@ public class MainControlador implements ActionListener {
         this.VistaMain.btnOpenInstructivo.addActionListener(this);
         this.VistaMain.btnOpenAcrcaDe.addActionListener(this);
         this.VistaMain.itmPagos.addActionListener(this);
+        this.VistaMain.editPacientes.addActionListener(this);
+        this.VistaMain.editDoctores.addActionListener(this);
 
         this.addCitaMedica.btnCerrar.addActionListener(this);
         this.addClinica.btnCerrarCrearClinica.addActionListener(this);
@@ -98,6 +108,11 @@ public class MainControlador implements ActionListener {
         this.viewInfo.btnOk.addActionListener(this);
 
         this.addCitaMedica.btnCrear.addActionListener(this);
+
+        this.viewEditDoctores.cerrarViewDoctores.addActionListener(this);
+        this.viewEditPacientes.cerrarViewPacientes.addActionListener(this);
+        this.editDoctor.btnEditarDoctor.addActionListener(this);
+        this.editPaciente.btnEditarEditarPaciente.addActionListener(this);
     }
 
     @Override
@@ -126,6 +141,10 @@ public class MainControlador implements ActionListener {
             this.viewAcercaDe.setVisible(true);
         } else if (btn == VistaMain.itmPagos) {
             this.viewPagos.setVisible(true);
+        } else if (btn == VistaMain.editDoctores) {
+            this.viewEditDoctores.setVisible(true);
+        } else if (btn == VistaMain.editPacientes) {
+            this.viewEditPacientes.setVisible(true);
         } else if (btn == addCitaMedica.btnCerrar) {
             addCitaMedica.setVisible(false);
         } else if (btn == addClinica.btnCerrarCrearClinica) {
@@ -156,6 +175,10 @@ public class MainControlador implements ActionListener {
             viewInfo.setVisible(false);
         } else if (btn == viewPagos.btnCerrar) {
             viewPagos.setVisible(false);
+        } else if (btn == viewEditDoctores.cerrarViewDoctores) {
+            viewEditDoctores.setVisible(false);
+        } else if (btn == viewEditPacientes.cerrarViewPacientes) {
+            viewEditPacientes.setVisible(false);
         }
         // MAIN_PACIENTES_WORKLOAD
         if (btn == addPaciente.crearPaciente) {
@@ -183,6 +206,36 @@ public class MainControlador implements ActionListener {
                 viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
                 viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
             });
+        } else if (btn == VistaMain.editPacientes) {
+            DefaultListModel<String> pacienteListModel = new DefaultListModel<>();
+            for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
+                pacienteListModel.add(i, ModeloMain.getPaciente(i).getNombreCompleto());
+            }
+            viewEditPacientes.viewPacientes.setModel(pacienteListModel);
+            this.viewEditPacientes.viewPacientes.addListSelectionListener(ev2 -> {
+                int selectedIndex = viewEditPacientes.viewPacientes.getSelectedIndex();
+                editPaciente.setVisible(true);
+                viewEditPacientes.setVisible(false);
+                DefaultListModel<String> defaultListModel2 = new DefaultListModel<>();
+                viewEditPacientes.viewPacientes.setModel(defaultListModel2);
+                viewEditPacientes.setVisible(false);
+                editPaciente.txtEditarNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
+                editPaciente.txtEditarApellidoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getApellidos());
+                editPaciente.txtEditarCedulaPaciente.setText(ModeloMain.getPaciente(selectedIndex).getNumeroCedula());
+                editPaciente.txtEditarEdadPaciente.setText(ModeloMain.getPaciente(selectedIndex).getEdad() + "");
+                editPaciente.txtEditarTipoSangrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
+                editPaciente.txtEditarFechaNacimientoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
+                editPaciente.lblNumPaciente.setText(selectedIndex + "");
+            });
+        }
+        if (btn == editPaciente.btnEditarEditarPaciente) {
+            Paciente editingPaciente = ModeloMain.getPaciente(Integer.parseInt(editPaciente.lblNumPaciente.getText()));
+            editingPaciente.setNombres(editPaciente.txtEditarNombrePaciente.getText());
+            editingPaciente.setApellidos(editPaciente.txtEditarApellidoPaciente.getText());
+            editingPaciente.setNumeroCedula(editPaciente.txtEditarCedulaPaciente.getText());
+            editingPaciente.setEdad(Integer.parseInt(editPaciente.txtEditarEdadPaciente.getText()));
+            editingPaciente.setTipoSangre(editPaciente.txtEditarTipoSangrePaciente.getText());
+            editingPaciente.setFechaNacimiento(editPaciente.txtEditarFechaNacimientoPaciente.getText());
         }
 
         // MAIN_DOCTORES_WORKLOAD
@@ -282,6 +335,7 @@ public class MainControlador implements ActionListener {
             Doctor foundDoctor = ModeloMain.searchDoctor(viewPagos.boxDoctor.getSelectedItem().toString());
             viewPagos.lblPago.setText(foundDoctor.calcularPago() + "");
         }
+
     }
 
     public void showInfoDialog(String msg) {

@@ -44,9 +44,11 @@ public class MainVista extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         itmAddPaciente = new javax.swing.JMenuItem();
+        editPacientes = new javax.swing.JMenuItem();
         itmViewPacientes = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         itmContratar = new javax.swing.JMenuItem();
+        editDoctores = new javax.swing.JMenuItem();
         itmViewDoctores = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         itmAddCitaMedica = new javax.swing.JMenuItem();
@@ -97,7 +99,12 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu1.add(itmAddPaciente);
 
-        itmViewPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        editPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        editPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
+        editPacientes.setText("Editar Pacientes");
+        jMenu1.add(editPacientes);
+
+        itmViewPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmViewPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewPacientes.setText("Ver Pacientes");
         jMenu1.add(itmViewPacientes);
@@ -111,7 +118,12 @@ public class MainVista extends javax.swing.JFrame {
         itmContratar.setText("Contratar ");
         jMenu5.add(itmContratar);
 
-        itmViewDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        editDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        editDoctores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
+        editDoctores.setText("Editar Doctores");
+        jMenu5.add(editDoctores);
+
+        itmViewDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmViewDoctores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewDoctores.setText("Ver Doctores");
         jMenu5.add(itmViewDoctores);
@@ -125,7 +137,7 @@ public class MainVista extends javax.swing.JFrame {
         itmAddCitaMedica.setText("Agendar");
         jMenu6.add(itmAddCitaMedica);
 
-        itmViewCitasMedicas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itmViewCitasMedicas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmViewCitasMedicas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/list.png"))); // NOI18N
         itmViewCitasMedicas.setText("Ver Citas");
         jMenu6.add(itmViewCitasMedicas);
@@ -144,7 +156,7 @@ public class MainVista extends javax.swing.JFrame {
         });
         jMenu7.add(itmEditClinica);
 
-        itmViewClinica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itmViewClinica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itmViewClinica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/hospital.png"))); // NOI18N
         itmViewClinica.setText("Datos de la Clinica");
         jMenu7.add(itmViewClinica);
@@ -274,6 +286,8 @@ public class MainVista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem btnOpenAcrcaDe;
     public javax.swing.JMenuItem btnOpenInstructivo;
+    public javax.swing.JMenuItem editDoctores;
+    public javax.swing.JMenuItem editPacientes;
     public javax.swing.JMenuItem itmAddCitaMedica;
     public javax.swing.JMenuItem itmAddPaciente;
     public javax.swing.JMenuItem itmContratar;

@@ -28,11 +28,19 @@ public class MainModelo {
     }
 
     public Doctor getDoctor(int pos) {
-        return ClinicaMain.doctores.get(pos);
+        if (pos >= 0) {
+            return ClinicaMain.doctores.get(pos);
+        } else {
+            return null;
+        }
     }
 
     public Paciente getPaciente(int pos) {
-        return ClinicaMain.pacientes.get(pos);
+        if (pos >= 0) {
+            return ClinicaMain.pacientes.get(pos);
+        } else {
+            return null;
+        }
     }
 
     public CitaMedica getCita(int pos) {
