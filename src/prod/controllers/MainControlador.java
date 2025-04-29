@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.DefaultComboBoxModel;
 import prod.classes.*;
-import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -207,38 +206,6 @@ public class MainControlador implements ActionListener {
                 viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
                 viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
             });
-        } else if (btn == VistaMain.editPacientes) {
-            DefaultListModel<String> pacienteListModel = new DefaultListModel<>();
-            for (int i = 0; i < ModeloMain.getClinicaMain().pacientes.size(); i++) {
-                pacienteListModel.add(i, ModeloMain.getPaciente(i).getNombreCompleto());
-            }
-            viewEditPacientes.viewPacientes.setModel(pacienteListModel);
-            ListSelectionListener[] listeners = viewEditPacientes.viewPacientes.getListSelectionListeners();
-            for (ListSelectionListener l : listeners) {
-                viewEditPacientes.viewPacientes.removeListSelectionListener(l);
-            }
-            this.viewEditPacientes.viewPacientes.addListSelectionListener(ev2 -> {
-                int selectedIndex = viewEditPacientes.viewPacientes.getSelectedIndex();
-                editPaciente.setVisible(true);
-                editPaciente.txtEditarNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
-                editPaciente.txtEditarApellidoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getApellidos());
-                editPaciente.txtEditarCedulaPaciente.setText(ModeloMain.getPaciente(selectedIndex).getNumeroCedula());
-                editPaciente.txtEditarEdadPaciente.setText(ModeloMain.getPaciente(selectedIndex).getEdad() + "");
-                editPaciente.txtEditarTipoSangrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
-                editPaciente.txtEditarFechaNacimientoPaciente.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
-                editPaciente.lblNumPaciente.setText(selectedIndex + "");
-                viewEditPacientes.viewPacientes.clearSelection();
-            });
-        }
-        if (btn == editPaciente.btnEditarEditarPaciente) {
-            Paciente editingPaciente = ModeloMain.getPaciente(Integer.parseInt(editPaciente.lblNumPaciente.getText()));
-            editingPaciente.setNombres(editPaciente.txtEditarNombrePaciente.getText());
-            editingPaciente.setApellidos(editPaciente.txtEditarApellidoPaciente.getText());
-            editingPaciente.setNumeroCedula(editPaciente.txtEditarCedulaPaciente.getText());
-            editingPaciente.setEdad(Integer.parseInt(editPaciente.txtEditarEdadPaciente.getText()));
-            editingPaciente.setTipoSangre(editPaciente.txtEditarTipoSangrePaciente.getText());
-            editingPaciente.setFechaNacimiento(editPaciente.txtEditarFechaNacimientoPaciente.getText());
-            editPaciente.setVisible(false);
         }
 
         // MAIN_DOCTORES_WORKLOAD

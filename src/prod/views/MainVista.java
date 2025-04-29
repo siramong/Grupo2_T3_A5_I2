@@ -103,6 +103,7 @@ public class MainVista extends javax.swing.JFrame {
         editPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK));
         editPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
         editPacientes.setText("Editar Pacientes");
+        editPacientes.setEnabled(false);
         jMenu1.add(editPacientes);
 
         itmViewPacientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -122,6 +123,7 @@ public class MainVista extends javax.swing.JFrame {
         editDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK));
         editDoctores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prod/assets/Icons/pencil.png"))); // NOI18N
         editDoctores.setText("Editar Doctores");
+        editDoctores.setEnabled(false);
         jMenu5.add(editDoctores);
 
         itmViewDoctores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
