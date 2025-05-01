@@ -3,37 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package prod.models;
 
 // Importa las clases que definen la estructura de los datos.
 import prod.classes.*;
 // Importa la clase ArrayList ya que es utilizada explícitamente por el Controlador.
-import java.util.ArrayList;
 
 /**
- * Clase Principal del Modelo.
- * Responsable de almacenar y gestionar los datos de la aplicación,
- * encapsulados principalmente dentro de un objeto Clinica.
- * Proporciona métodos públicos para que el Controlador pueda acceder
- * y manipular estos datos (añadir, obtener, buscar).
- * No tiene conocimiento de la interfaz de usuario (Vistas).
+ * Clase Principal del Modelo. Responsable de almacenar y gestionar los datos de
+ * la aplicación, encapsulados principalmente dentro de un objeto Clinica.
+ * Proporciona métodos públicos para que el Controlador pueda acceder y
+ * manipular estos datos (añadir, obtener, buscar). No tiene conocimiento de la
+ * interfaz de usuario (Vistas).
  *
  * @author PC_12
  */
 public class MainModelo {
 
     /**
-     * El objeto ClinicaMain contiene toda la información relevante:
-     * el nombre y dirección de la clínica, y las listas internas
-     * donde se almacenan los objetos Doctor, Paciente y CitaMedica.
-     * Se inicializa al crear el MainModelo con valores por defecto.
+     * El objeto ClinicaMain contiene toda la información relevante: el nombre y
+     * dirección de la clínica, y las listas internas donde se almacenan los
+     * objetos Doctor, Paciente y CitaMedica. Se inicializa al crear el
+     * MainModelo con valores por defecto.
      */
     Clinica ClinicaMain = new Clinica("Tu clinica", "Una dirección sumamente real, 123");
 
     /**
-     * Añade un nuevo objeto Doctor a la lista de doctores de la clínica.
-     * Es llamado por el Controlador cuando se requiere registrar un nuevo doctor.
+     * Añade un nuevo objeto Doctor a la lista de doctores de la clínica. Es
+     * llamado por el Controlador cuando se requiere registrar un nuevo doctor.
      *
      * @param nombres: Nombres del doctor a añadir.
      * @param apellidos: Apellidos del doctor a añadir.
@@ -49,8 +46,8 @@ public class MainModelo {
     }
 
     /**
-     * Añade un nuevo objeto Paciente a la lista de pacientes de la clínica.
-     * Es llamado por el Controlador cuando se registra un nuevo paciente.
+     * Añade un nuevo objeto Paciente a la lista de pacientes de la clínica. Es
+     * llamado por el Controlador cuando se registra un nuevo paciente.
      *
      * @param nombres: Nombres del paciente.
      * @param apellidos: Apellidos del paciente.
@@ -67,8 +64,8 @@ public class MainModelo {
     }
 
     /**
-     * Crea y añade una nueva Cita Médica a la lista de citas de la clínica.
-     * Es llamado por el Controlador al agendar una nueva cita.
+     * Crea y añade una nueva Cita Médica a la lista de citas de la clínica. Es
+     * llamado por el Controlador al agendar una nueva cita.
      *
      * @param doctorAsignado: El objeto Doctor que atenderá la cita.
      * @param pacienteAtendido: El objeto Paciente que será atendido.
@@ -85,9 +82,11 @@ public class MainModelo {
 
     /**
      * Obtiene un objeto Doctor específico de la lista, basado en su posición.
-     * Permite al Controlador obtener los datos de un doctor para mostrarlos o usarlos.
+     * Permite al Controlador obtener los datos de un doctor para mostrarlos o
+     * usarlos.
      *
      * @param pos: El índice (posición numérica) del doctor en la lista interna.
+     * @return Objeto Doctor en la posición indicada.
      */
     public Doctor getDoctor(int pos) {
         // Verifica si el índice 'pos' está dentro de los límites válidos de la lista de doctores.
@@ -104,6 +103,7 @@ public class MainModelo {
      * Obtiene un objeto Paciente específico de la lista, basado en su posición.
      *
      * @param pos: El índice del paciente en la lista interna.
+     * @return Objeto Paciente en la posición indicada.
      */
     public Paciente getPaciente(int pos) {
         // Verifica si el índice 'pos' es válido para la lista de pacientes.
@@ -117,9 +117,11 @@ public class MainModelo {
     }
 
     /**
-     * Obtiene un objeto CitaMedica específico de la lista, basado en su posición.
+     * Obtiene un objeto CitaMedica específico de la lista, basado en su
+     * posición.
      *
      * @param pos: El índice de la cita en la lista interna.
+     * @return Objeto CitaMedica en la posición indicada.
      */
     public CitaMedica getCita(int pos) {
         // Devuelve directamente la cita de la posición 'pos' de la lista 'citas' en ClinicaMain.
@@ -127,9 +129,11 @@ public class MainModelo {
     }
 
     /**
-     * Devuelve la referencia al objeto Clinica principal completo.
-     * Permite al Controlador acceder a todos los datos gestionados por el Modelo
+     * Devuelve la referencia al objeto Clinica principal completo. Permite al
+     * Controlador acceder a todos los datos gestionados por el Modelo
      * (incluyendo el nombre/dirección de la clínica y las listas completas).
+     *
+     * @return Variable ClinicaMain que contiene todos los datos.
      */
     public Clinica getClinicaMain() {
         // Simplemente devuelve la variable ClinicaMain que contiene todos los datos.
@@ -137,10 +141,12 @@ public class MainModelo {
     }
 
     /**
-     * Busca un Doctor en la lista comparando el nombre completo con una cadena de texto dada.
-     * Es útil para encontrar el objeto Doctor correspondiente a un nombre seleccionado por el usuario.
+     * Busca un Doctor en la lista comparando el nombre completo con una cadena
+     * de texto dada. Es útil para encontrar el objeto Doctor correspondiente a
+     * un nombre seleccionado por el usuario.
      *
      * @param query: El nombre completo a buscar, Ejemplo: "Juan Perez".
+     * @return Objeto Doctor Encontrado
      */
     public Doctor searchDoctor(String query) {
         Doctor foundDoctor = null; // Variable para guardar el doctor si se encuentra, inicia en null.
@@ -160,9 +166,11 @@ public class MainModelo {
     }
 
     /**
-     * Busca un Paciente en la lista comparando el nombre completo con una cadena de texto dada.
+     * Busca un Paciente en la lista comparando el nombre completo con una
+     * cadena de texto dada.
      *
      * @param query: El nombre completo del paciente a buscar.
+     * @return Objeto Paciente Encontrado
      */
     public Paciente searchPaciente(String query) {
         Paciente foundPaciente = null; // Variable para guardar el paciente encontrado, inicia en null.
@@ -182,7 +190,6 @@ public class MainModelo {
 
     // --- Métodos para Actualizar (Edición) ---
     // Estos métodos serían necesarios para que la funcionalidad de edición del Controlador funcione.
-
     /**
      * Actualiza los datos de un Doctor existente en la lista.
      *
@@ -191,44 +198,46 @@ public class MainModelo {
      * @param apellido: Nuevo apellido.
      * @param departamento: Nuevo departamento.
      * @param sueldo: Nuevo sueldo.
+     * @return Operación exitosa o no
      */
-     public boolean updateDoctor(int index, String nombre, String apellido, String departamento, double sueldo) {
-         if (index >= 0 && index < ClinicaMain.doctores.size()) { // Valida índice
-             Doctor doctorToUpdate = ClinicaMain.doctores.get(index); // Obtiene el doctor
-             // Actualiza sus atributos usando métodos set.
-             doctorToUpdate.setNombres(nombre);
-             doctorToUpdate.setApellidos(apellido);
-             doctorToUpdate.setDepartamento(departamento);
-             doctorToUpdate.setSueldoHora(sueldo);
-             return true; // Éxito
-         }
-         return false; // Fallo (índice inválido)
-     }
+    public boolean updateDoctor(int index, String nombre, String apellido, String departamento, double sueldo) {
+        if (index >= 0 && index < ClinicaMain.doctores.size()) { // Valida índice
+            Doctor doctorToUpdate = ClinicaMain.doctores.get(index); // Obtiene el doctor
+            // Actualiza sus atributos usando métodos set.
+            doctorToUpdate.setNombres(nombre);
+            doctorToUpdate.setApellidos(apellido);
+            doctorToUpdate.setDepartamento(departamento);
+            doctorToUpdate.setSueldoHora(sueldo);
+            return true; // Éxito
+        }
+        return false; // Fallo (índice inválido)
+    }
 
-     /**
-      * Actualiza los datos de un Paciente existente en la lista.
-      *
-      * @param index: Índice del paciente a actualizar.
-      * @param nombres: Nuevos nombres.
-      * @param apellidos: Nuevos apellidos.
-      * @param tipoSangre: Nuevo tipo de sangre.
-      * @param numeroCedula: Nueva cédula.
-      * @param edad: Nueva edad.
-      * @param fechaNacimiento: Nueva fecha de nacimiento.
-      */
-     public boolean updatePaciente(int index, String nombres, String apellidos, String tipoSangre, String numeroCedula, int edad, String fechaNacimiento) {
-         if (index >= 0 && index < ClinicaMain.pacientes.size()) { // Valida índice
-             Paciente pacienteToUpdate = ClinicaMain.pacientes.get(index); // Obtiene el paciente
-             // Actualiza sus atributos usando métodos set.
-             pacienteToUpdate.setNombres(nombres);
-             pacienteToUpdate.setApellidos(apellidos);
-             pacienteToUpdate.setTipoSangre(tipoSangre);
-             pacienteToUpdate.setNumeroCedula(numeroCedula);
-             pacienteToUpdate.setEdad(edad);
-             pacienteToUpdate.setFechaNacimiento(fechaNacimiento);
-             return true; // Éxito
-         }
-         return false; // Fallo (índice inválido)
-     }
+    /**
+     * Actualiza los datos de un Paciente existente en la lista.
+     *
+     * @param index: Índice del paciente a actualizar.
+     * @param nombres: Nuevos nombres.
+     * @param apellidos: Nuevos apellidos.
+     * @param tipoSangre: Nuevo tipo de sangre.
+     * @param numeroCedula: Nueva cédula.
+     * @param edad: Nueva edad.
+     * @param fechaNacimiento: Nueva fecha de nacimiento.
+     * @return Operación exitosa o no
+     */
+    public boolean updatePaciente(int index, String nombres, String apellidos, String tipoSangre, String numeroCedula, int edad, String fechaNacimiento) {
+        if (index >= 0 && index < ClinicaMain.pacientes.size()) { // Valida índice
+            Paciente pacienteToUpdate = ClinicaMain.pacientes.get(index); // Obtiene el paciente
+            // Actualiza sus atributos usando métodos set.
+            pacienteToUpdate.setNombres(nombres);
+            pacienteToUpdate.setApellidos(apellidos);
+            pacienteToUpdate.setTipoSangre(tipoSangre);
+            pacienteToUpdate.setNumeroCedula(numeroCedula);
+            pacienteToUpdate.setEdad(edad);
+            pacienteToUpdate.setFechaNacimiento(fechaNacimiento);
+            return true; // Éxito
+        }
+        return false; // Fallo (índice inválido)
+    }
 
 } // Fin de la clase MainModelo
