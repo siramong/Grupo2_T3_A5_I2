@@ -21,6 +21,7 @@ public class MainControlador implements ActionListener {
 
     MainModelo ModeloMain;
     MainVista VistaMain;
+    ListControlador ListControlador;
 
     addCitaMedica addCitaMedica;
     addClinica addClinica;
@@ -44,6 +45,7 @@ public class MainControlador implements ActionListener {
     viewInfoDialog viewInfo;
 
     public MainControlador(MainModelo ModeloMain, MainVista VistaMain) {
+        ListControlador = new ListControlador();
         this.ModeloMain = ModeloMain;
         this.VistaMain = VistaMain;
 
@@ -196,7 +198,7 @@ public class MainControlador implements ActionListener {
                 pacienteListModel.add(i, ModeloMain.getPaciente(i).getNombreCompleto());
             }
             viewPacientes.viewPacientes.setModel(pacienteListModel);
-            this.viewPacientes.viewPacientes.addListSelectionListener(ev2 -> {
+            /*this.viewPacientes.viewPacientes.addListSelectionListener(ev2 -> {
                 int selectedIndex = viewPacientes.viewPacientes.getSelectedIndex();
                 viewPaciente.setVisible(true);
                 viewPaciente.LblNombrePaciente.setText(ModeloMain.getPaciente(selectedIndex).getNombres());
@@ -205,7 +207,7 @@ public class MainControlador implements ActionListener {
                 viewPaciente.lblEdadPaciente.setText(ModeloMain.getPaciente(selectedIndex).getEdad() + "");
                 viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(selectedIndex).getTipoSangre());
                 viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(selectedIndex).getFechaNacimiento());
-            });
+            });*/
         }
 
         // MAIN_DOCTORES_WORKLOAD
@@ -311,5 +313,15 @@ public class MainControlador implements ActionListener {
     public void showInfoDialog(String msg) {
         viewInfo.setVisible(true);
         viewInfo.lblMsg.setText(msg);
+    }
+
+    public void showPaciente(int index) {
+        viewPaciente.setVisible(true);
+        viewPaciente.LblNombrePaciente.setText(ModeloMain.getPaciente(index).getNombres());
+        viewPaciente.lblApellidos.setText(ModeloMain.getPaciente(index).getApellidos());
+        viewPaciente.lblCedulaPaciente.setText(ModeloMain.getPaciente(index).getNumeroCedula());
+        viewPaciente.lblEdadPaciente.setText(ModeloMain.getPaciente(index).getEdad() + "");
+        viewPaciente.lblTipoSaNGRE.setText(ModeloMain.getPaciente(index).getTipoSangre());
+        viewPaciente.lblFechaNacimiento.setText(ModeloMain.getPaciente(index).getFechaNacimiento());
     }
 }

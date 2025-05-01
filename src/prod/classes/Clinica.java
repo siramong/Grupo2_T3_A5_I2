@@ -23,7 +23,7 @@ public class Clinica {
     public Clinica(String nombreClinica, String direccionClinica) {
         this.nombreClinica = nombreClinica;
         this.direccionClinica = direccionClinica;
-        // this.pacientes.add(new Paciente("Ariel Esteban","Morocho Calle","O+","0107065484",16,"21/10/2008")); // LINEA DEBUG, NO AÑADIR
+        this.pacientes.add(new Paciente("Ariel Esteban","Morocho Calle","O+","0107065484",16,"21/10/2008")); // LINEA DEBUG, NO AÑADIR
     }
 
     public ArrayList<CitaMedica> getCitas() {
